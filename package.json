@@ -1,0 +1,24 @@
+{
+  "name": "trex-seed",
+  "version": "0.1.0",
+  "description": "Seed project to T-Rex node lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:darlanalves/trex-seed.git"
+  },
+  "author": "Darlan Alves <darlan@moovia.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darlanalves/trex-seed/issues"
+  },
+  "homepage": "https://github.com/darlanalves/trex-seed",
+  "dependencies": {
+    "t-rex": "0.0.x",
+    "express": "3.4.8"
+  }
+}
