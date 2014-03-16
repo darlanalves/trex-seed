@@ -1,11 +1,17 @@
 module.exports = {
 	// http://localhost/task/:task
 	name: 'task',
-	parent: 'user',
+	//	parent: 'user',
 
 	schema: {
-		name: String,
-		deadline: Date,
-		description: String
+		name: {
+			type: String,
+			unique: true,
+			required: true
+		},
+		done: {
+			type: Boolean,
+			default: false
+		}
 	}
 };

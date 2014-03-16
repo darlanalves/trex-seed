@@ -2,7 +2,7 @@ var rex = require('t-rex'),
 	express = require('express'),
 
 	environments = {
-		development: 'mongodb://localhost/test',
+		development: 'mongodb://localhost/todo',
 		production: 'mongodb://PRODUCTION-SERVER:cRaZyPassWoRD@mongo-server:1234/database'
 	};
 
