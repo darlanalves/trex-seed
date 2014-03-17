@@ -1,0 +1,14 @@
+<div>
+	<form ng-submit="addTask()">
+		<h1><span>TODO List</span></h1>
+		<input type="text" ng-model="newTask.name" required="" placeholder="Type in a new task..."/>
+		<button type="button" ng-click="addTask()"></button>
+	</form>
+	
+	<ul>
+		<li ng-repeat="task in taskList" ng-class="{done: task.done}">
+			<input type="checkbox" ng-model="task.done" id="task-{{task._id}}" />
+			<label for="task-{{task._id}}" ng-click="markAsDone(task)" ng-swipe-left="openDetails($event, task)">{{task.name}}</a>
+		</li>
+	</ul>
+</div>
