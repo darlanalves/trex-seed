@@ -1,24 +1,30 @@
-angular.module('task').controller('TaskListController', ['$scope', '$state', 'TaskService', '$timeout',
+angular.module('trex').controller('TaskListController', ['$scope', '$state', 'TaskService', '$timeout',
 	function($scope, $state, TaskService, $timeout) {
-		$scope.newTask = {
-			done: false
-		};
+		$scope.newTask = {};
 
-		TaskService.findAll().then(function(list) {
+		TaskService.findPending().then(function(list) {
 			$scope.taskList = list;
 		});
 
-		$scope.markAsDone = function(task) {
+		$scope.toggleTask = function($event, task) {
+			$event.stopPropagation();
+
+			var taskToUpdate = angular.extend({}, task);
+			taskToUpdate.done = !taskToUpdate.done;
+
 			$timeout(function() {
-				TaskService.updateTask(task).then(null, function() {
+				TaskService.updateTask(taskToUpdate).then(function() {
+					task.done = taskToUpdate.done;
+				}, function() {
 					// rollback on failure
-					task.done = !task.done;
+					task.done = !taskToUpdate.done;
 				});
 			});
 		};
 
 		$scope.addTask = function() {
 			var name = $scope.newTask.name;
+
 			if (!name) return;
 
 			TaskService.createTask(name).then(function(response) {
@@ -34,7 +40,7 @@ angular.module('task').controller('TaskListController', ['$scope', '$state', 'Ta
 		$scope.openDetails = function($event, task) {
 			$event.preventDefault();
 
-			$state.transitionTo('task.view', {
+			$state.transitionTo('task-view', {
 				taskId: task._id
 			});
 		};

@@ -1,14 +1,19 @@
-<div>
-	<form ng-submit="addTask()">
-		<h1><span>TODO List</span></h1>
+<header>
+	<div class="left"><button><i class="icon-reorder"></i></button></div>
+	<div class="center">To-Do List</div>
+	<div class="right"><button><i class="icon-star"></i></button></div>
+</header>
+<form class="form form-new-task" ng-submit="addTask()" name="newTaskForm">
+	<div class="input-container">
 		<input type="text" ng-model="newTask.name" required="" placeholder="Type in a new task..."/>
-		<button type="button" ng-click="addTask()"></button>
-	</form>
-	
-	<ul>
-		<li ng-repeat="task in taskList" ng-class="{done: task.done}">
-			<input type="checkbox" ng-model="task.done" id="task-{{task._id}}" />
-			<label for="task-{{task._id}}" ng-click="markAsDone(task)" ng-swipe-left="openDetails($event, task)">{{task.name}}</a>
-		</li>
-	</ul>
+	</div>
+	<div class="button-container">
+		<button type="submit" class="button" ng-click="addTask()" ng-disabled="newTaskForm.$invalid">add</button>
+	</div>
+</form>
+<div class="list checkbox task-list">
+	<span ng-repeat="task in taskList" ng-class="{done: task.done}">
+		<input type="checkbox" ng-model="task.done" id="task-{{task._id}}" />
+		<label class="list-item" for="task-{{task._id}}" ng-click="toggleTask($event, task)" ng-swipe-left="openDetails($event, task)">{{task.name}}</label>
+	</span>
 </div>

@@ -1,31 +1,18 @@
-angular.module('task', ['common', 'auth'])
+angular.module('trex')
 
 .config(['$stateProvider', 'templatePath', 'registerRoutes',
 	function($stateProvider, templatePath, registerRoutes) {
 		registerRoutes($stateProvider, {
-			'task': {
-				abstract: true,
-				template: '<div ui-view="task"></div>'
-			},
-
-			'task.list': {
+			'task-list': {
 				url: '/task',
-				views: {
-					task: {
-						templateUrl: templatePath('task/list.html'),
-						controller: 'TaskListController'
-					}
-				}
+				templateUrl: templatePath('task/list.html'),
+				controller: 'TaskListController'
 			},
 
-			'task.view': {
+			'task-view': {
 				url: '/task/:taskId',
-				views: {
-					task: {
-						templateUrl: templatePath('task/view.html'),
-						controller: 'TaskViewController'
-					}
-				}
+				templateUrl: templatePath('task/view.html'),
+				controller: 'TaskViewController'
 			}
 		});
 	}

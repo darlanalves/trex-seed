@@ -1,1 +1,0 @@
-angular.module('trex', ['common', 'task', 'user']);

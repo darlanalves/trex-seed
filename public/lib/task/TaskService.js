@@ -1,15 +1,33 @@
-angular.module('task').service('TaskService', ['$http', 'rejected',
+angular.module('trex').service('TaskService', ['$http', 'rejected',
 	function($http, rejected) {
 		return {
-			findAll: function() {
-				return $http.get('/task').then(function(response) {
+			findAll: function(conditions) {
+				var filter = '';
+
+				if (conditions) {
+					filter = $.param({
+						filter: conditions
+					});
+				}
+
+				return $http.get('/task?' + filter).then(function(response) {
 					return response && response.data || [];
 				});
 			},
 
+			findDone: function() {
+				return this.findAll({
+					done: true
+				});
+			},
+
+			findPending: function() {
+				return this.findAll({
+					done: false
+				});
+			},
+
 			updateTask: function(task) {
-				//var userId = UserService.getId();
-				///user/' + userId + 
 				return $http.put('/task/' + task._id, task);
 			},
 

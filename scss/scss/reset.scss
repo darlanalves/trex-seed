@@ -1,0 +1,12 @@
+@import "compass/reset";
+
+*, input, textarea, button, :before, :after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul, ol, li {
+	padding: 0;
+	margin: 0;
+}

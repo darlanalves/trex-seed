@@ -1,6 +1,8 @@
 <div class="task-view">
 	<h1>{{task.name}}</h1>
 	<hr/>
-	<button ng-click="backToList()">&laquo;</button>
-	<button ng-click="removeTask()">&times;</button>
+	<div class="btn-group">
+		<button type="button" class="button" ng-click="backToList()">&laquo;</button>
+		<button type="button" class="button" ng-click="removeTask()">&times;</button>
+	</div>
 </div>

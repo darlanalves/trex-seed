@@ -1,4 +1,4 @@
-angular.module('common', ['ngRoute', 'ngTouch', 'ajoslin.mobile-navigate', 'ui.router'])
+angular.module('trex', ['ngRoute', 'ngTouch', 'ui.router', 'defer']) //'ajoslin.mobile-navigate',
 
 .constant('templatePath', function(path) {
 	return path ? '/views/' + path : '';
@@ -15,7 +15,7 @@ angular.module('common', ['ngRoute', 'ngTouch', 'ajoslin.mobile-navigate', 'ui.r
 	function($urlRouterProvider, $stateProvider, templatePath, registerRoutes) {
 		var defaultRouteCtrl = ['$state',
 			function($state) {
-				$state.transitionTo('task.list');
+				$state.transitionTo('task-list');
 			}
 		];
 
@@ -35,30 +35,8 @@ angular.module('common', ['ngRoute', 'ngTouch', 'ajoslin.mobile-navigate', 'ui.r
 	}
 ])
 
-.provider('deferred', function() {
-	this.$get = ['$q', '$timeout', function($q, $timeout) {
-		return function (value) {
-			var defer = $q.defer();
-
-			$timeout(function() {
-				defer.resolve(value);
-			});
-
-			return defer.promise;
-		};
-	}];
-})
-
-.provider('rejected', function() {
-	this.$get = ['$q', '$timeout', function($q, $timeout) {
-		return function (error) {
-			var defer = $q.defer();
-
-			$timeout(function() {
-				defer.reject(error);
-			});
-
-			return defer.promise;
-		};
-	}];
+.factory('$exceptionHandler', function() {
+	return function(exception) {
+		$(document.body).html(exception.message);
+	};
 });

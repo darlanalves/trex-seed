@@ -1,0 +1,35 @@
+ul, ol, .list {
+  background-color: #444444;
+}
+ul li, ul .list-item, ol li, ol .list-item, .list li, .list .list-item {
+  color: #fafafa;
+  cursor: pointer;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+ul li:focus, ul li:hover, ul .list-item:focus, ul .list-item:hover, ol li:focus, ol li:hover, ol .list-item:focus, ol .list-item:hover, .list li:focus, .list li:hover, .list .list-item:focus, .list .list-item:hover {
+  background-color: #333333;
+  outline: 1px solid #262626;
+}
+ul .header, ol .header, .list .header {
+  background-color: #2f2f2f;
+  font-weight: bold;
+}
+ul .header:focus, ul .header:hover, ol .header:focus, ol .header:hover, .list .header:focus, .list .header:hover {
+  outline: 0;
+}
+ul .inline-edit input, ol .inline-edit input, .list .inline-edit input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: #fafafa;
+  background: transparent;
+}
+ul .inline-edit input:focus, ol .inline-edit input:focus, .list .inline-edit input:focus {
+  background-color: #515151;
+}

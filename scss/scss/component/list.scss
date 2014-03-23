@@ -1,0 +1,39 @@
+@import "base";
+
+ul, ol, .list {
+	background-color: $list-background;
+
+	li, .list-item {
+		color: $list-color;
+		cursor: pointer;
+		@include paddings;
+		@include ellipsis;
+
+		&:focus, &:hover {
+			background-color: $list-background-active;
+			outline: 1px solid darken($list-background-active, 5%);
+		}
+	}
+
+	.header {
+		background-color: $list-background-header;
+		font-weight: bold;
+
+		&:focus, &:hover { outline: 0; }
+	}
+
+	.inline-edit {
+		input {
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			border: 0;
+			color: $list-color;
+			background: transparent;
+
+			&:focus {
+				background-color: lighten($list-background, 5%);
+			}
+		}
+	}
+}

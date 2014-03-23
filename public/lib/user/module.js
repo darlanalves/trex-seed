@@ -1,9 +1,9 @@
-angular.module('user', ['common', 'auth'])
+angular.module('trex')
 
 .config(['$stateProvider', 'templatePath', 'registerRoutes',
 	function($stateProvider, templatePath, registerRoutes) {
 		registerRoutes($stateProvider, {
-			'user': {
+			'user-profile': {
 				url: '/user',
 				views: {
 					'root': {

@@ -1,7 +1,7 @@
 module.exports = {
 	// http://localhost/task/:task
 	name: 'task',
-	//	parent: 'user',
+	//	parent: 'user',		// Not ready yet!
 
 	schema: {
 		name: {

@@ -1,0 +1,33 @@
+.button {
+  border: 0;
+  outline: 0;
+  color: white;
+  border-radius: 3px;
+  padding: 8px 16px;
+  margin: 8px 0;
+  font-size: 16px;
+}
+.button[type="submit"] {
+  background: #79b14b;
+}
+.button[type="reset"] {
+  background: #e7643f;
+}
+.button[type="button"] {
+  background: #6e9bb7;
+}
+.button[disabled] {
+  background: #847a6e;
+  color: #b4ada4;
+}
+.button > i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.btn-group {
+  text-align: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}

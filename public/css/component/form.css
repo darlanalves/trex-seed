@@ -1,0 +1,15 @@
+.form {
+  padding: 16px;
+  font-size: 16px;
+}
+
+.form-group {
+  padding: 0 16px 16px;
+  font-size: 16px;
+}
+.form-group > label {
+  color: white;
+  padding: 8px 0;
+  margin: 8px 0;
+  font-size: 16px;
+}

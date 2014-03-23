@@ -1,0 +1,32 @@
+@import "base";
+
+$input-paddings: $base-vertical-font*2;
+
+select,
+.input,
+input:not([type="submit"]),
+input:not([type="button"]) {
+	width: calc(100% - #{$input-paddings});
+	display: inline-block;
+	border: 0;
+	outline: 0;
+	background-color: $input-background;
+	@include vr-input;
+	@include fl-margins;
+
+	&:focus {
+		background-color: $input-background-active;
+	}
+}
+
+input.invalid, input.ng-invalid,
+input.invalid:focus, input.ng-invalid:focus {
+	//outline: 2px solid $input-background-invalid;
+	color: $input-color-invalid;
+	@include single-box-shadow($input-background-invalid, 0, 0, 10px, 0);
+}
+
+input[disabled] {
+	background: $input-background-disabled;
+	opacity: 0.85;
+}

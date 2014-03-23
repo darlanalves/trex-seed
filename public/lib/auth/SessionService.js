@@ -1,4 +1,4 @@
-angular.module('auth').service('SessionService', function() {
+angular.module('trex').service('SessionService', function() {
 	var $profile = null;
 
 	return {

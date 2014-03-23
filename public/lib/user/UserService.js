@@ -1,4 +1,4 @@
-angular.module('user').service('UserService', ['$http',
+angular.module('trex').service('UserService', ['$http',
 	function($http) {
 		return {
 			getId: function() {

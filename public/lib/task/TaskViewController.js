@@ -1,4 +1,4 @@
-angular.module('task').controller('TaskViewController', ['$scope', '$state', '$stateParams', 'TaskService',
+angular.module('trex').controller('TaskViewController', ['$scope', '$state', '$stateParams', 'TaskService',
 	function($scope, $state, $stateParams, TaskService) {
 		var taskId = $stateParams.taskId;
 
@@ -7,7 +7,7 @@ angular.module('task').controller('TaskViewController', ['$scope', '$state', '$s
 		});
 
 		function goBack() {
-			$state.transitionTo('task.list');
+			$state.transitionTo('task-list');
 		}
 
 		$scope.backToList = goBack;

@@ -1,0 +1,50 @@
+select,
+.input,
+input:not([type="submit"]),
+input:not([type="button"]) {
+  width: calc(100% - 32px);
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  background-color: #fcfcfc;
+  padding: 8px 16px;
+  margin: 8px 0;
+  font-size: 16px;
+}
+select:first-child, select.first,
+.input:first-child,
+.input.first,
+input:not([type="submit"]):first-child,
+input:not([type="submit"]).first,
+input:not([type="button"]):first-child,
+input:not([type="button"]).first {
+  margin-left: 0;
+}
+select:last-child, select.last,
+.input:last-child,
+.input.last,
+input:not([type="submit"]):last-child,
+input:not([type="submit"]).last,
+input:not([type="button"]):last-child,
+input:not([type="button"]).last {
+  margin-right: 0;
+}
+select:focus,
+.input:focus,
+input:not([type="submit"]):focus,
+input:not([type="button"]):focus {
+  background-color: white;
+}
+
+input.invalid, input.ng-invalid,
+input.invalid:focus, input.ng-invalid:focus {
+  color: #dd1111;
+  -webkit-box-shadow: 0 0 10px 0 #ff1a1a;
+  -moz-box-shadow: 0 0 10px 0 #ff1a1a;
+  box-shadow: 0 0 10px 0 #ff1a1a;
+}
+
+input[disabled] {
+  background: #9c9389;
+  opacity: 0.85;
+}

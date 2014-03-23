@@ -1,0 +1,45 @@
+@import "base";
+
+$header-button-size: 48px;
+
+header, .header {
+	display: block;
+	position: relative;
+	@include vr-block;
+
+	button {
+		padding: $font-size;
+		font-size: $font-size;
+		background-color: transparent;
+		border: 0;
+		color: white;
+
+		&:hover, &:focus {
+			@include single-box-shadow(#333, 0, 0, 7px, 0, inset);
+		}
+	}
+
+	.left {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+		float: left;
+	}
+
+	.center {
+		text-align: center;
+		font-weight: bold;
+		margin: 0 $header-button-size;
+		@include ellipsis;
+	}
+
+	.right {
+		position: absolute;
+		left: auto;
+		top: 0;
+		right: 0;
+		z-index: 3;
+		float: right;
+	}
+}

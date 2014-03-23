@@ -1,0 +1,14 @@
+@import "base";
+
+.form {
+	@include vr-block;
+}
+
+.form-group {
+	@include vr-level-7;
+
+	> label {
+		color: $form-label-color;
+		@include vr-label;
+	}
+}
